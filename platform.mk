@@ -140,8 +140,8 @@ PRODUCT_PACKAGES += \
 	android.hardware.broadcastradio@1.0-impl
 
 # Doze
-PRODUCT_PACKAGES += \
-	XiaomiDoze
+#PRODUCT_PACKAGES += \
+#	XiaomiDoze
 
 # DRM
 PRODUCT_PACKAGES += \
@@ -456,8 +456,8 @@ PRODUCT_COPY_FILES += \
 	$(PLATFORM_PATH)/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini
 
 # XiaomiParts
-PRODUCT_PACKAGES += \
-	XiaomiParts
+#PRODUCT_PACKAGES += \
+#	XiaomiParts
 
 # KeyHandler
 PRODUCT_PACKAGES += \
