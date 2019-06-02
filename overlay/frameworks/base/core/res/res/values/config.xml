@@ -296,8 +296,6 @@
         <item>/system/lib64/libRSDriver.so</item>
         <item>/system/lib64/libRSCpuRef.so</item>
         <item>/system/lib64/libblas.so</item>
-        <item>"/system/priv-app/SystemUI/oat/arm64/SystemUI.vdex"</item>
-        <item>"/system/priv-app/SystemUI/oat/arm64/SystemUI.odex"</item>
         <item>"/system/lib64/libsurfaceflinger.so"</item>
   </string-array>
 
@@ -367,7 +365,7 @@
 	<bool name="config_ignoreRssnrSignalLevel">true</bool>
 
 	<!-- Enable ACS (auto channel selection) for Wifi hotspot (SAP) -->
-	<bool translatable="false" name="config_wifi_softap_acs_supported">true</bool>
+	<bool translatable="false" name="config_wifi_softap_acs_supported">false</bool>
 
 	<!-- Enable 802.11ac for Wifi hotspot (SAP) -->
 	<bool translatable="false" name="config_wifi_softap_ieee80211ac_supported">true</bool>
@@ -462,4 +460,14 @@
     <!-- Should we filter any display modes which are unampped? -->
     <bool name="config_filterDisplayModes">true</bool>
 
+    <!-- Smart charge sysfs node and value for suspend/resume charging-->
+    <string name="config_SmartChargingSysfsNode" translatable="false">/sys/class/power_supply/battery/input_suspend</string>
+    <string name="config_SmartChargingSupspendValue" translatable="false">1</string>
+    <string name="config_SmartChargingResumeValue" translatable="false">0</string>
+
+    <!-- Whether device has oled display -->
+    <bool name="config_hasOledDisplay">true</bool>
+
+    <!-- Specify custom blanking delay of the display -->
+    <integer name="config_screen_off_delay">0</integer>
 </resources>
