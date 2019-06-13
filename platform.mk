@@ -39,9 +39,9 @@ DEVICE_PACKAGE_OVERLAYS := device/xiaomi/sdm660-common/overlay
 
 # Build Fingerprint
 PRODUCT_BUILD_PROP_OVERRIDES += \
-	PRIVATE_BUILD_DESC="taimen-user 9 PQ3A.190505.001 5373320 release-keys"
+	PRIVATE_BUILD_DESC="taimen-user 9 PQ3A.190605.003 5524043 release-keys"
 
-BUILD_FINGERPRINT := google/taimen/taimen:9/PQ3A.190505.001/5373320:user/release-keys
+BUILD_FINGERPRINT := google/taimen/taimen:9/PQ3A.190605.003/5524043:user/release-keys
 
 # Platform properties
 $(call inherit-product, $(PLATFORM_PATH)/platform_prop.mk)
@@ -163,14 +163,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
-
-# FM packages
-PRODUCT_PACKAGES += \
-	libqcomfm_jni \
-	android.hardware.broadcastradio@1.0-impl \
-	FM2 \
-	qcom.fmradio \
-	qcom.fmradio.xml
 
 # Framework RRO
 PRODUCT_ENFORCE_RRO_TARGETS := \
@@ -349,6 +341,7 @@ PRODUCT_PACKAGES += \
 	init.qcom.post_boot.sh \
 	init.qcom.sh \
 	init.qcom.usb.sh \
+	init.qcom.power.sh \
 	init.qti.fm.sh \
 	init.qti.qseecomd.sh
 
@@ -421,7 +414,7 @@ PRODUCT_PACKAGES += \
 
 # USB
 PRODUCT_PACKAGES += \
-	android.hardware.usb@1.0-service.xiaomi_sdm660
+	android.hardware.usb@1.1-service.xiaomi_sdm660
 
 # Video seccomp policy files
 PRODUCT_COPY_FILES += \
@@ -429,7 +422,11 @@ PRODUCT_COPY_FILES += \
 	$(PLATFORM_PATH)/seccomp/mediaextractor-seccomp.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediaextractor.policy
 
 # VNDK
-PRODUCT_PACKAGES += vndk-sp
+PRODUCT_PACKAGES += \
+	libdng_sdk.vendor_32 \
+	libstdc++.vendor \
+	vndk-ext \
+	vndk_package
 
 PRODUCT_COPY_FILES += \
 	prebuilts/vndk/v27/arm/arch-arm-armv7-a-neon/shared/vndk-core/android.frameworks.sensorservice@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib/android.frameworks.sensorservice@1.0-v27.so \

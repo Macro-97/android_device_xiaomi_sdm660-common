@@ -71,7 +71,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
-	persist.camera.eis.enable=0 \
 	persist.camera.preview.ubwc=0 \
 	persist.vendor.qti.telephony.vt_cam_interface=1 \
 	vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,com.qualcomm.qti.qmmi,org.cyanogenmod.snap \
@@ -193,9 +192,17 @@ PRODUCT_PROPERTY_OVERRIDES += \
   	persist.mm.enable.prefetch=true \
 	video.disable.ubwc=1
 
+# Memory optimizations
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.vendor.qti.sys.fw.bservice_enable=true
+
 # Netflix custom property
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.netflix.bsp_rev=Q660-13149-1
+
+# OEM Unlock reporting
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+	ro.oem_unlock_supported=1
 
 # Perf
 PRODUCT_PROPERTY_OVERRIDES += \
