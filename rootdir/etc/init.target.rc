@@ -372,6 +372,10 @@ on charger
     setprop sys.usb.configfs 1
     setprop debug.charger.on 1
 
+
+    mkdir /persist 0771 root system
+
+
 service vendor.hvdcp_opti /system/vendor/bin/hvdcp_opti
     class main
     user root

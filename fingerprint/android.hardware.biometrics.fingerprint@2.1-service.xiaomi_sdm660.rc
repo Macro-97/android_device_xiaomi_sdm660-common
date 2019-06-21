@@ -17,7 +17,7 @@ on boot
 on post-fs-data
     mkdir /data/misc/fpc 0770 system system
     mkdir /data/misc/goodix 0770 system system
-    mkdir /persist/fpc 0770 system system
+    mkdir /mnt/vendor/persist/fpc 0770 system system
     mkdir /data/vendor/goodix 0770 system system
     mkdir /data/vendor/fpc 0770 system system
     copy /data/vendor/fpc/user.db /data/vendor_de/0/fpdata/user.db
