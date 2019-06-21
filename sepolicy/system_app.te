@@ -6,11 +6,13 @@ get_prop(system_app, camera_prop);
 get_prop(system_app, spectrum_prop);
 add_service(system_app, goodix_fingerprint_service)
 allow system_app bg_boot_complete_prop:file read;
-allow system_app sysfs:file { getattr open write };
+allow system_app sysfs:file { getattr open read write };
 allow system_app sysfs_leds:dir search;
 allow system_app sysfs_vibrator:dir search;
 allow system_app sysfs_leds:file { open getattr write };
 allow system_app sysfs_vibrator:file { getattr open write };
+allow system_app sysfs_battery_supply:dir search;
+allow system_app sysfs_battery_supply:file { getattr open read write };
 allow system_app bg_daemon_prop:file read;
 allow system_app bootloader_boot_reason_prop:file read;
 allow system_app boottime_prop:file read;
